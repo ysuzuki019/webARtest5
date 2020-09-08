@@ -8,7 +8,6 @@ const loadPlaces = function(coords) {
             location: {
                 lat: 0, // add here latitude if using static data
                 lng: 0, // add here longitude if using static data
-
             }
         },
     ];
@@ -17,7 +16,7 @@ const loadPlaces = function(coords) {
         return loadPlaceFromAPIs(coords);
     }
 
-    return Promise.resolve(PLACES);
+    return PLACES;
 };
 
 // getting places from REST APIs
@@ -25,7 +24,7 @@ function loadPlaceFromAPIs(position) {
     const params = {
         radius: 300,    // search places not farther than this value (in meters)
         clientId: 'HZIJGI4COHQ4AI45QXKCDFJWFJ1SFHYDFCCWKPIJDWHLVQVZ',
-        clientSecret: '',
+        clientSecret: 'GYRKWWJMO2WK3KIRWBXIN5FQAWXTVFIK2QM4VQWNQ4TRAKWH',
         version: '20300101',    // foursquare versioning, required but unuseful for this demo
     };
 
@@ -59,7 +58,7 @@ window.onload = () => {
     // first get current user location
     return navigator.geolocation.getCurrentPosition(function (position) {
 
-        // then use it to load from remote APIs some places nearby
+        // than use it to load from remote APIs some places nearby
         loadPlaces(position.coords)
             .then((places) => {
                 places.forEach((place) => {
@@ -68,7 +67,7 @@ window.onload = () => {
 
                     // add place icon
                     const icon = document.createElement('a-image');
-                    icon.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
+                    icon.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
                     icon.setAttribute('name', place.name);
                     icon.setAttribute('src', '../assets/map-marker.png');
 
@@ -100,7 +99,7 @@ window.onload = () => {
                     };
 
                     icon.addEventListener('click', clickListener);
-                    
+
                     scene.appendChild(icon);
                 });
             })
