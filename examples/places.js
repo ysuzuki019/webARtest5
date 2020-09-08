@@ -1,13 +1,41 @@
 const loadPlaces = function(coords) {
     // COMMENT FOLLOWING LINE IF YOU WANT TO USE STATIC DATA AND ADD COORDINATES IN THE FOLLOWING 'PLACES' ARRAY
-    const method = 'api';
+    const method = 'apix';
 
     const PLACES = [
         {
-            name: "Your place name",
+            name: "place1",
             location: {
-                lat: 0, // add here latitude if using static data
-                lng: 0, // add here longitude if using static data
+                lat: 36.0635310, // add here latitude if using static data
+                lng: 136.2431043, // add here longitude if using static data
+            }
+        },
+        {
+            name: "place2",
+            location: {
+                lat: 36.0635213, // add here latitude if using static data
+                lng: 136.2429957, // add here longitude if using static data
+            }
+        },
+        {
+            name: "place3",
+            location: {
+                lat: 36.0636346, // add here latitude if using static data
+                lng: 136.2431305, // add here longitude if using static data
+            }
+        },
+        {
+            name: "place4",
+            location: {
+                lat: 36.0635351, // add here latitude if using static data
+                lng: 136.2430228, // add here longitude if using static data
+            }
+        },
+        {
+            name: "place5",
+            location: {
+                lat: 36.0635533, // add here latitude if using static data
+                lng: 136.2430590, // add here longitude if using static data
             }
         },
     ];
