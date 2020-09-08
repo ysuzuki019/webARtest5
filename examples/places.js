@@ -16,7 +16,9 @@ const loadPlaces = function(coords) {
         return loadPlaceFromAPIs(coords);
     }*/
 
-    return PLACES;
+    return new Promise((resolve, reject) => {
+        resolve(PLACES);
+    });
 };
 
 // getting places from REST APIs
