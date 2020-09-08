@@ -12,9 +12,9 @@ const loadPlaces = function(coords) {
         },
     ];
 
-    if (method === 'api') {
+    /*if (method === 'api') {
         return loadPlaceFromAPIs(coords);
-    }
+    }*/
 
     return PLACES;
 };
